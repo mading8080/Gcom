@@ -1,0 +1,21 @@
+from django.contrib.auth.models import customUser
+
+# Créer un nouvel utilisateur (si nécessaire)
+User = User.objects.create_User(Username='nom_utilisateur', password='mot_de_passe', email='email@example.com')
+User.save()
+print("Utilisateur créé avec succès !")
+from django.contrib.auth.models import User
+# Modifier les attributs de l'utilisateur
+User.Username = 'User'  # Modifier le nom d'utilisateur
+User.email = 'nouveau_email@example.com'   # Modifier l'email
+User.first_name = 'User'                  # Ajouter ou modifier le prénom
+User.last_name = 'User'                     # Ajouter ou modifier le nom
+User.password = 'User'
+# Vous pouvez aussi modifier d'autres attributs comme 'is_active', 'is_staff', etc.
+User.is_active = True  # Activer l'utilisateur
+User.is_staff = False  # Définir si l'utilisateur est un administrateur
+
+# Sauvegarder les modifications
+User.save()
+
+print(f"Utilisateur modifié avec succès : {User.Username}")
